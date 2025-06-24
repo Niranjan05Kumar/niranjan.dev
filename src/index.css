@@ -98,6 +98,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: var(--ff2);
+    overflow-x: hidden;
 }
 
 /* h1 {
@@ -109,10 +110,10 @@ body {
     margin: var(--spacing2) 0;
 } */
 
-p {
+/* p {
     font: var(--p);
     margin: var(--spacing2) 0;
-}
+} */
 
 img {
     width: 100%;
@@ -147,4 +148,15 @@ section {
 }
 .bg-sidebar-gradient {
     background: radial-gradient(ellipse at top left, var(--bg-light), var(--bg), var(--bg-dark));
+}
+
+.top-skill-card{
+    width: calc(45vw - 8px);
+    height: calc(45vw - 8px);
+}
+@media (min-width:768px) {
+    .top-skill-card{
+        width: 180px;
+        height: 180px;
+    }
 }

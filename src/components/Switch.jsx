@@ -25,7 +25,6 @@ const Switch = () => {
     } else {
       document.documentElement.classList.add(theme);
     }
-    console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
     localStorage.setItem("theme", theme);
   }, [theme]);
 

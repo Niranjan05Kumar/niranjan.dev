@@ -23,6 +23,33 @@ export const navLinks = [
   },
 ];
 
+export const topSkills = [
+  {
+    id: 0,
+    icon: react,
+    label: "React",
+    position: "-top-[18%] left-0",
+  },
+  {
+    id: 1,
+    icon: tailwind,
+    label: "Tailwind",
+    position: "-top-[18%] right-0",
+  },
+  {
+    id: 2,
+    icon: javascript,
+    label: "Javascript",
+    position: "-bottom-[18%] left-0",
+  },
+  {
+    id: 3,
+    icon: framer,
+    label: "Framer motion",
+    position: "-bottom-[18%] right-0",
+  }
+]
+
 export const socialMedia = [
   {
     id: "social-media-1",
