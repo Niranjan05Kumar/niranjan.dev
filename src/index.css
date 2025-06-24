@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+:root {
+    --bg-dark: hsl(0 0% 0%);
+    --bg: hsl(0 0% 8%);
+    --bg-light: hsl(0 0% 15%);
+    --bg-transparent: hsla(0 0% 15% / 0.3);
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(0 0% 70%);
+    --border-dark: hsl(0 0% 20%);
+    --border-light: hsl(0 0% 35%);
+    --primary: hsl(223, 73%, 61%);
+    --secondary: hsl(53, 98%, 60%);
+    --ff: "Noto Sans", sans-serif;
+    --ff2: "Fira Sans", serif;
+    --p: 1.08rem/1.5em var(--ff);
+    /* --h1: 600 3rem/1.2em var(--ff2); */
+    /* --h2: 600 2rem/1.2em var(--ff2); */
+    --b-radius1: 6px;
+    --b-radius2: 8px;
+    --b-radius3: 10px;
+    --b-radius4: 15px;
+    --b-radius5: 20px;
+    --b-radius6: 32px;
+    --b-radius7: 100px;
+    --spacing1: 4px;
+    --spacing2: 8px;
+    --spacing3: 16px;
+    --spacing4: 20px;
+    --spacing5: 40px;
+    --spacing6: 80px;
+    --spacing7: 160px;
+    --gap: var(--spacing2);
+    --gap2: var(--spacing3);
+    --gap3: var(--spacing4);
+    --gap4: var(--spacing5);
+    --padding1: var(--spacing1);
+    --padding2: var(--spacing2);
+    --padding3: var(--spacing3);
+    --padding4: var(--spacing4);
+    --padding5: var(--spacing5);
+    --padding6: var(--spacing6);
+    --padding7: var(--spacing7);
+    --padding-btn: var(--spacing2) var(--spacing4);
+    --padding-btn2: var(--spacing2) var(--spacing5);
+    --padding-card: var(--spacing4) var(--spacing4);
+    --padding-card-2: var(--spacing2) var(--spacing5);
+    --margin1: var(--spacing1);
+    --margin2: var(--spacing2);
+    --margin3: var(--spacing3);
+    --margin4: var(--spacing4);
+    --margin5: var(--spacing5);
+    --margin6: var(--spacing6);
+    --margin7: var(--spacing7);
+}
+
+.light {
+    --bg-dark: hsl(0 0% 85%);
+    --bg: hsl(0 0% 92%);
+    --bg-light: hsl(0 0% 100%);
+    --bg-transparent: hsla(0 0% 85% / 0.3);
+    --text: hsl(0 0% 5%);
+    --text-muted: hsl(0 0% 30%);
+    --border-dark: hsl(0 0% 75%);
+    --border-light: hsl(0 0% 80%);
+    --primary: hsl(223, 73%, 39%);
+    --secondary: hsl(53, 98%, 50%);
+    --shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow2: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+@theme inline {
+    --color-bg-dark: var(--bg-dark);
+    --color-bg: var(--bg);
+    --color-bg-light: var(--bg-light);
+    --color-text: var(--text);
+    --color-text-muted: var(--text-muted);
+    --color-border-dark: var(--border-dark);
+    --color-border-light: var(--border-light);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --tracking-1: var(--spacing1);
+    --tracking-2: var(--spacing2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100vw;
+    background: var(--bg-dark);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff2);
+}
+
+/* h1 {
+    font: var(--h1);
+} */
+
+/* h2 {
+    font: var(--h2);
+    margin: var(--spacing2) 0;
+} */
+
+p {
+    font: var(--p);
+    margin: var(--spacing2) 0;
+}
+
+img {
+    width: 100%;
+}
+
+nav {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+section {
+    width: 100vw;
+}
+
+
+.bg-gradient {
+    background: linear-gradient(150deg,
+            var(--text-muted) -278.56%,
+            var(--bg-light) -78.47%,
+            var(--bg-dark) 91.61%);
+}
+
+.bg-gradient-2 {
+    background: linear-gradient(to top left, #101010, #1b1b1e, #37373a);
+}
+
+.bg-trans-blur {
+    background: var(--bg-transparent);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 1px hsla(0, 0%, 75%, 0.2);
+    z-index: 99;
+}
+.bg-sidebar-gradient {
+    background: radial-gradient(ellipse at top left, var(--bg-light), var(--bg), var(--bg-dark));
+}
