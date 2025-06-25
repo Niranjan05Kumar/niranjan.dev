@@ -66,6 +66,43 @@ export const topSkills = [
   },
 ];
 
+export const education = [
+  {
+    id: 0,
+    title: "Bachelor of Technology",
+    score: "68",
+    totalScore: "6.80 CGPA",
+    institute: "Indian Institute of Technology (BHU), Varanasi",
+    stream: "Mining Engineering",
+    year: "2021 - Present",
+    span: "md:col-span-2 md:row-span-2",
+    progressColor: "--primary",
+  },
+  {
+    id: 1,
+    title: "Class 12th",
+    score: "78.60",
+    totalScore: "393 / 500",
+    institute: "Govt. Sr. Sec. School Kumher Bharatpur (Rajasthan)",
+    stream: "Science - RBSE",
+    year: 2022,
+    span: "md:col-span-3",
+    progressColor: "",
+  },
+  {
+    id: 2,
+    title: "Class 10th",
+    score: "77.67",
+    totalScore: "466 / 600",
+    institute:
+      "Govt. Sr. Sec. School Bailara kalan, Kumher Bharatpur (Rajasthan)",
+    stream: "Common - RBSE",
+    year: 2020,
+    span: "md:col-span-3",
+    progressColor: "",
+  },
+];
+
 export const socialMedia = [
   {
     id: "social-media-1",

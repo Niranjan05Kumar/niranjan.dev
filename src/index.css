@@ -15,6 +15,7 @@
     --primary: hsl(223, 73%, 61%);
     --secondary: hsl(53, 98%, 60%);
     --shine: #b5b5b5c4;
+    --hover-education: #96949451;
     --shine-dark: rgba(255, 255, 255, 0) 40%;
     --shine-dark2: rgba(255, 255, 255, 0) 60%;
     --shine-light: rgb(255, 255, 255) 50%;
@@ -75,6 +76,7 @@
     --shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
     --shadow2: 0 4px 10px rgba(0, 0, 0, 0.15);
     --shine: hsla(0, 0%, 30%, 0.728);
+    --hover-education: hsla(0, 1%, 55%, 0.728);
     --shine-dark: rgba(145, 145, 145, 0.705) 60%;
     --shine-dark2: rgba(255, 255, 255, 0.765) 40%;
     --shine-light: rgba(0, 0, 0, 0.993) 50%;

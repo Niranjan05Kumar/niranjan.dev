@@ -1,11 +1,12 @@
 import React from "react";
-import { Navbar, Hero } from "./components";
+import { Navbar, Hero, Education } from "./components";
 
 const App = () => {
   return (
-    <div className="mx-auto">
+    <div>
       <Navbar />
       <Hero />
+      <Education />
     </div>
   );
 };
