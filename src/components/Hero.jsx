@@ -1,19 +1,24 @@
 import { MdOutlineFileDownload } from "react-icons/md";
 import { topSkills } from "../data";
+import { motion } from "motion/react";
+import ShinyText from "../blocks/TextAnimations/ShinyText";
 
 const Hero = () => {
   return (
     <section className="section mt-[90px] flex flex-col items-center justify-between gap-y-(--gap4) md:flex-row px-[5vw] lg:px-[15vw] py-(--spacing5) md:py-[120px]">
-      <div className="flex flex-col w-full justify-start md:w-[50%] md:gap-(--gap)">
+      <div className="flex flex-col w-full justify-start md:w-[50%] md:gap-(--gap) mt-(--margin5) md:mt-0">
         <h4 className="text-text-muted text-xl">
           Hey there <span>!</span>
         </h4>
         <h1 className="uppercase font-semibold text-[8vw] lg:text-[3vw] md:text-[5vw] tracking-[3px] text-text">
           Niranjan Kumar
         </h1>
-        <h2 className="text-lg md:text-xl md:tracking-[2px] text-text-muted font-semibold">
-          Frontend Web Developer
-        </h2>
+        <ShinyText
+          text="Frontend Web Developer"
+          disabled={false}
+          speed={3}
+          className="text-lg md:text-xl md:tracking-[2px] font-semibold"
+        />
         <p className="text-text-muted text-[16px] sm:text-[18px] w-full xl:w-[500px] mt-(--margin3)">
           A passionate Frontend Web Developer skilled in React, Tailwind CSS,
           and modern UI tools. I'm focused on becoming a Full Stack Web
@@ -33,13 +38,55 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-[90Vw] h-[90vw] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] mt-(--margin5) md:mt-0">
+      <div className="w-[90Vw] h-[90vw] sm:w-[350px] sm:h-[350px] my-(--margin6) md:my-0">
         <div className="w-full h-full grid grid-cols-2 md:gap-(--gap2) gap-(--gap) ">
           {topSkills.map((skill) => (
-            <div key={skill.id} className="relative bg-bg-light flex justify-center items-center rounded-(--b-radius3)">
-              <img src={skill.icon} alt={skill.label} className="w-[55px] h-[55px]" />
-              <label className={`absolute ${skill.position} bg-bg-dark py-[1px] px-(--padding3) outline-2 outline-border-dark rounded-full text-text-muted`}>{skill.label}</label>
-            </div>
+            <motion.div
+              key={skill.id}
+              className="relative bg-bg-light flex justify-center items-center rounded-(--b-radius3)"
+              drag
+              dragDirectionLock
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{
+                scale: 0.9,
+                transition: { duration: 0.06 },
+              }}
+              transition={{
+                type: "spring",
+              }}
+            >
+              <motion.img
+                src={skill.icon}
+                alt={skill.label}
+                className="w-[55px] h-[55px]"
+                animate={skill.id === 0 ? { rotate: 360 } : {}}
+                transition={{
+                  duration: 14,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  repeatDelay: 1,
+                  ease: "linear",
+                }}
+              />
+              <motion.label
+                className={`absolute ${skill.position} bg-bg-dark py-[1px] px-(--padding3) outline-2 outline-border-dark rounded-full text-text-muted`}
+                initial={{ rotate: -6 }}
+                animate={{ rotate: 0 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 1.2,
+                  repeatDelay: 0.01,
+                  type: "spring",
+                }}
+              >
+                {skill.label}
+              </motion.label>
+            </motion.div>
           ))}
         </div>
       </div>

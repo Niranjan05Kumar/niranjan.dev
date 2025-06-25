@@ -1,4 +1,20 @@
-import { css, figma, framer, git, github, html, javascript, react, redux, tailwind, vscode, githubs, linkedin, mail, twitter } from "../assets";
+import {
+  css,
+  figma,
+  framer,
+  git,
+  github,
+  html,
+  javascript,
+  react,
+  redux,
+  tailwind,
+  vscode,
+  githubs,
+  linkedin,
+  mail,
+  twitter,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -28,27 +44,27 @@ export const topSkills = [
     id: 0,
     icon: react,
     label: "React",
-    position: "-top-[18%] left-0",
+    position: "-top-[20%] left-0",
   },
   {
     id: 1,
     icon: tailwind,
     label: "Tailwind",
-    position: "-top-[18%] right-0",
+    position: "-top-[20%] right-0",
   },
   {
     id: 2,
     icon: javascript,
     label: "Javascript",
-    position: "-bottom-[18%] left-0",
+    position: "-bottom-[20%] left-0",
   },
   {
     id: 3,
     icon: framer,
     label: "Framer motion",
-    position: "-bottom-[18%] right-0",
-  }
-]
+    position: "-bottom-[20%] right-0",
+  },
+];
 
 export const socialMedia = [
   {
