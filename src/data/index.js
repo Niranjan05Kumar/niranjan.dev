@@ -20,6 +20,9 @@ import {
   reactbits,
   shadcn,
   uiverse,
+  hoobank,
+  medwin,
+  obysagency,
 } from "../assets";
 
 export const navLinks = [
@@ -251,6 +254,54 @@ export const skills = [
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
     ],
+  },
+];
+
+export const projects = [
+  {
+    id: 0,
+    image: obysagency,
+    title: "Obys Agency Clone",
+    description:
+      "Animated Obys clone with GSAP, Locomotive Scroll, and magnetic interactions showcasing creative scroll effects.",
+    techs: [
+      "HTML", "CSS", "Javascript", "GSAP", "Locomotive JS" 
+    ],
+    highlights: [
+      "Scroll based animations", "magnetic buttons", "responsive layout", 
+    ],
+    live: "https://niranjan05kumar.github.io/obys.agency/",
+    github: "https://github.com/Niranjan05Kumar/obys.agency",
+  },
+  {
+    id: 1,
+    image: hoobank,
+    title: "HooBank UI",
+    description:
+      "React-based HooBank UI with Tailwind CSS, featuring reusable components and structured data-driven design.",
+    techs: [
+      "React", "Tailwind CSS", "Javascript",
+    ],
+    highlights: [
+      "Reusable components", "Structured data-driven", "responsive layout", 
+    ],
+      live: "https://hoobank-iota-brown.vercel.app/",
+    github: "https://github.com/Niranjan05Kumar/hoobank",
+  },
+  {
+    id:2,
+    image: medwin,
+    title: "Medwin Health",
+    description:
+      "Responsive health landing page featuring embedded Google Map, clean layout, and mobile-friendly user interface.",
+    techs: [
+      "HTML", "Tailwind CSS", "Javascript",
+    ],
+    highlights: [
+      "Google Map integration", "responsive layout", 
+    ],
+      live: "https://medwin-psi.vercel.app/",
+    github: "https://github.com/Niranjan05Kumar/Medwin",
   },
 ];
 

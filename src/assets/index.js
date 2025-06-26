@@ -19,6 +19,9 @@ import gsap from "./gsap.webp";
 import reactbits from "./reactbits.ico";
 import shadcn from "./shadcn.svg";
 import uiverse from "./uiverse.webp";
+import hoobank from "./hoobank.png";
+import medwin from "./medwin.png";
+import obysagency from "./obysagency.png";
 
 
 export {
@@ -43,4 +46,7 @@ export {
   reactbits,
   shadcn,
   uiverse,
+  hoobank,
+  medwin,
+  obysagency,
 };

@@ -97,6 +97,10 @@
     --tracking-2: var(--spacing2);
 }
 
+::selection{
+    color: var(--primary);
+}
+
 html {
     scroll-behavior: smooth;
 }
