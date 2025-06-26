@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             animate="visible"
             exit="exit"
             variants={sidebarVariants}
-            className="fixed top-[85px] left-0 w-[60vw] p-[5vw] bg-sidebar-gradient rounded-r-3xl z-50"
+            className="fixed top-[83px] left-0 w-[60vw] p-[5vw] bg-sidebar-gradient rounded-r-3xl z-50"
           >
             <motion.ul className="flex flex-col gap-4 text-3xl font-semibold sm:hidden">
               {navLinks.map((link) => (

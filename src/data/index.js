@@ -1,5 +1,6 @@
 import {
   css,
+  cursor,
   figma,
   framer,
   git,
@@ -9,11 +10,16 @@ import {
   react,
   redux,
   tailwind,
+  vercel,
   vscode,
   githubs,
   linkedin,
   mail,
   twitter,
+  gsap,
+  reactbits,
+  shadcn,
+  uiverse,
 } from "../assets";
 
 export const navLinks = [
@@ -27,7 +33,7 @@ export const navLinks = [
   },
   {
     id: "2",
-    link: "Skill",
+    link: "Skills",
   },
   {
     id: "3",
@@ -100,6 +106,151 @@ export const education = [
     year: 2020,
     span: "md:col-span-3",
     progressColor: "",
+  },
+];
+
+export const skills = [
+  {
+    id: 0,
+    type: "Core Technologies",
+    skillinfo: [
+      {
+        icon: html,
+        label: "HTML5",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500 hover:bg-bg duration-500",
+      },
+      {
+        icon: css,
+        label: "CSS3",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: javascript,
+        label: "JavaScript",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+    ],
+  },
+  {
+    id: 1,
+    type: "Frontend Stack",
+    skillinfo: [
+      {
+        icon: react,
+        label: "React JS",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: tailwind,
+        label: "Tailwind CSS",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: redux,
+        label: "Redux",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+    ],
+  },
+  {
+    id: 3,
+    type: "Tools & Utilities",
+    skillinfo: [
+      {
+        icon: git,
+        label: "Git",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: github,
+        label: "GitHub",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: cursor,
+        label: "Cursor",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: vscode,
+        label: "VS Code",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: vercel,
+        label: "Vercel",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: figma,
+        label: "Figma",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light p-[17px] border-(--border-light) hover:bg-bg duration-500",
+      },
+    ],
+  },
+  {
+    id: 2,
+    type: "Animations & Interactions",
+    skillinfo: [
+      {
+        icon: framer,
+        label: "Framer-motion",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: gsap,
+        label: "GSAP",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+    ],
+  },
+  {
+    id: 4,
+    type: "UI Component Libraries",
+    skillinfo: [
+      {
+        icon: shadcn,
+        label: "ShadCN",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        icon: reactbits,
+        label: "ReactBits",
+        onClick: () => console.log("hii"),
+        className:
+          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+    ],
   },
 ];
 
