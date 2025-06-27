@@ -43,7 +43,7 @@ const CopyIcon = ({ text }) => {
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper className="h-[36px] rounded-xl shadow-[0_5px_5px_rgba(0,0,0,0.2)] ">
       <button onClick={handleCopy} className="copy">
         <span
           data-text-end="Copied!"

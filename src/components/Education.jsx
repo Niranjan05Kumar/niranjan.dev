@@ -12,7 +12,7 @@ const Education = () => {
         {education.map((edu) => (
           <SpotlightCard
             key={edu.id}
-            className={`flex flex-col justify-center items-center gap-(--gap) rounded-xl ${edu.span}`}
+            className={`flex flex-col justify-center items-center gap-(--gap) rounded-xl shadow-[2px_5px_10px_rgba(0,0,0,0.15)] ${edu.span}`}
             spotlightColor="var(--hover-education)"
           >
             <h2 className="text-text text-2xl mb-3">{edu.title}</h2>

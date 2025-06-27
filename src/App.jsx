@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navbar, Hero, Education, Skills, Projects, Contact } from "./components";
+import { Navbar, Hero, Education, Skills, Projects, Contact, Footer } from "./components";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -29,6 +29,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 };

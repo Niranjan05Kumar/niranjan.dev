@@ -16,7 +16,7 @@ const ProjectCard = ({
     <motion.div
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
-      className="h-auto rounded-xl bg-bg-light border-2 border-border-light shadow-md overflow-hidden flex flex-col"
+      className="h-auto rounded-xl bg-bg-light border-2 border-border-light shadow-[0_5px_10px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col"
     >
       <div className="h-[180px] w-full">
         <img src={image} alt={title} className="h-[100%] w-full object-cover" />

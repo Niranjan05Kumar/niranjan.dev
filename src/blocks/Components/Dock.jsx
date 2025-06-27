@@ -64,7 +64,7 @@ function DockItem({
         onFocus={() => isHovered.set(1)}
         onBlur={() => isHovered.set(0)}
         style={{ scale }}
-        className={`absolute inset-0 z-10 flex items-center justify-center rounded-2xl border-2 p-3 shadow-md ${className}`}
+        className={`absolute inset-0 z-10 flex items-center justify-center rounded-2xl border-2 p-3 shadow-[0_4px_6px_rgba(0,0,0,0.25)] ${className}`}
       >
         {Children.map(children, (child) => cloneElement(child, { isHovered }))}
       </motion.div>
