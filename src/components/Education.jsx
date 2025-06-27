@@ -4,7 +4,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 
 const Education = () => {
   return (
-    <section className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) my-(--margin5) mb-(--margin7) ">
+    <section id="education" className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) my-(--margin5) mb-(--margin7) ">
       <div>
         <h2 className="text-4xl font-semibold text-text">Education</h2>
       </div>

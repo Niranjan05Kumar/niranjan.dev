@@ -21,7 +21,7 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-const Sidebar = ({ isOpen, setIsOpen }) => {
+const Sidebar = ({ isOpen, setIsOpen, active  }) => {
   return (
     <div className="relative">
       <div
@@ -50,9 +50,11 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                 <motion.li
                   key={link.id}
                   variants={itemVariants}
-                  className="text-text"
+                  className={`hover:text-text duration-300 ease-in ${
+                active === link.id ? "text-text font-semibold" : "text-text-muted"
+              }`}
                 >
-                  <a href={`#${link.link}`}>{link.link}</a>
+                  <a href={`#${link.href}`}>{link.label}</a>
                 </motion.li>
               ))}
             </motion.ul>

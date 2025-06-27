@@ -26,15 +26,15 @@ const ProjectCard = ({
           <h3 className="text-xl font-semibold text-text">{title}</h3>
           <p className="text-sm text-text-muted w-full">{description}</p>
           <div className="flex w-full flex-wrap gap-[6px]">
-            {techs.map((tech) => (
-              <h5 className="bg-bg text-sm text-text-muted px-3 py-[2px] rounded-full border-1 border-(--border-light) flex justify-center">
+            {techs.map((tech, ind) => (
+              <h5 key={ind} className="bg-bg text-sm text-text-muted px-3 py-[2px] rounded-full border-1 border-(--border-light) flex justify-center">
                 {tech}
               </h5>
             ))}
           </div>
           <div className="flex flex-col w-full">
-            {highlights.map((highlight) => (
-              <h5 className="text-md text-text py-[2px] flex items-center gap-(--gap2)">
+            {highlights.map((highlight, ind) => (
+              <h5 key={ind} className="text-md text-text py-[2px] flex items-center gap-(--gap2)">
                 <p className="bg-text w-2 h-2 rounded-full"></p>
                 {highlight}
               </h5>

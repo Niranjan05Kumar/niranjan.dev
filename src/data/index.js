@@ -23,28 +23,34 @@ import {
   hoobank,
   medwin,
   obysagency,
+  location,
 } from "../assets";
 
 export const navLinks = [
   {
-    id: "0",
-    link: "About",
+    id: "about",
+    label: "About",
+    href: "about",
   },
   {
-    id: "1",
-    link: "Education",
+    id: "education",
+    label: "Education",
+    href: "education",
   },
   {
-    id: "2",
-    link: "Skills",
+    id: "skills",
+    label: "Skills",
+    href: "skills",
   },
   {
-    id: "3",
-    link: "Projects",
+    id: "projects",
+    label: "Projects",
+    href: "projects",
   },
   {
-    id: "4",
-    link: "Contact",
+    id: "contact",
+    label: "Contact",
+    href: "contact",
   },
 ];
 
@@ -83,7 +89,7 @@ export const education = [
     totalScore: "6.80 CGPA",
     institute: "Indian Institute of Technology (BHU), Varanasi",
     stream: "Mining Engineering",
-    year: "2021 - Present",
+    year: "2023 - Present",
     span: "md:col-span-2 md:row-span-2",
     progressColor: "--primary",
   },
@@ -120,21 +126,18 @@ export const skills = [
       {
         icon: html,
         label: "HTML5",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500 hover:bg-bg duration-500",
       },
       {
         icon: css,
         label: "CSS3",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: javascript,
         label: "JavaScript",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
@@ -147,21 +150,18 @@ export const skills = [
       {
         icon: react,
         label: "React JS",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: tailwind,
         label: "Tailwind CSS",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: redux,
         label: "Redux",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
@@ -174,42 +174,36 @@ export const skills = [
       {
         icon: git,
         label: "Git",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: github,
         label: "GitHub",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: cursor,
         label: "Cursor",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: vscode,
         label: "VS Code",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: vercel,
         label: "Vercel",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: figma,
         label: "Figma",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light p-[17px] border-(--border-light) hover:bg-bg duration-500",
       },
@@ -222,14 +216,12 @@ export const skills = [
       {
         icon: framer,
         label: "Framer-motion",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: gsap,
         label: "GSAP",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
@@ -242,14 +234,12 @@ export const skills = [
       {
         icon: shadcn,
         label: "ShadCN",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
         icon: reactbits,
         label: "ReactBits",
-        onClick: () => console.log("hii"),
         className:
           "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
@@ -305,29 +295,46 @@ export const projects = [
   },
 ];
 
+import GithubIcon from '../assets/github.svg?react';
+import LinkedinIcon from '../assets/linkedin.svg?react';
+import TwitterIcon from '../assets/twitter.svg?react';
+import MailIcon from '../assets/mail.svg?react';
+import LocationIcon from '../assets/location.svg?react';
+
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: github,
+    icon: GithubIcon,
     label: "Github",
     link: "https://github.com/niranjan05Kumar/",
+    onClick: () => window.open("https://github.com/niranjan05Kumar/", "_blank"),
   },
   {
     id: "social-media-2",
-    icon: twitter,
-    label: "Twitter",
-    link: "https://x.com/05niranjankumar",
+    icon: LinkedinIcon,
+    label: "Linkedin",
+    link: "https://www.linkedin.com/in/niranjan05kumar/",
+    onClick: () => window.open("https://www.linkedin.com/in/niranjan05kumar/", "_blank"),
   },
   {
     id: "social-media-3",
-    icon: linkedin,
-    label: "Linkedin",
-    link: "https://www.linkedin.com/in/niranjan05kumar/",
+    icon: TwitterIcon,
+    label: "Twitter",
+    link: "https://x.com/05niranjankumar",
+    onClick: () => window.open("https://x.com/05niranjankumar", "_blank"),
   },
   {
     id: "social-media-4",
-    icon: mail,
+    icon: MailIcon,
     label: "Mail",
     link: "niranjankumar11082005@gmail.com",
+    onClick: () => window.open("mailto:niranjankumar11082005@gmail.com"),
+  },
+  {
+    id: "social-media-5",
+    icon: LocationIcon,
+    label: "Varanasi, India",
+    link: "Varanasi (221005), India",
+    onClick: () => window.open("https://www.google.com/maps/place/Indian+Institute+of+Technology+(BHU)+Varanasi/@25.2677,82.9913,17z", "_blank"),
   },
 ];

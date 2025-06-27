@@ -3,7 +3,7 @@ import { projects } from "../data";
 
 export default function ProjectsSection() {
   return (
-    <section className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) mt-(--margin7) mb-(--margin6) ">
+    <section id="projects" className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) mt-(--margin7) mb-(--margin6) ">
       <div>
         <h2 className="text-4xl font-semibold text-text">Projects</h2>
       </div>

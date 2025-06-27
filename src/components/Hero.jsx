@@ -5,7 +5,7 @@ import ShinyText from "../blocks/TextAnimations/ShinyText";
 
 const Hero = () => {
   return (
-    <section className="section mt-[90px] flex flex-col items-center justify-between gap-y-(--gap4) md:flex-row px-[5vw] lg:px-[15vw] py-(--spacing5) md:py-[120px]">
+    <section id="about" className="section mt-[90px] flex flex-col items-center justify-between gap-y-(--gap4) md:flex-row px-[5vw] lg:px-[15vw] py-(--spacing5) md:py-[120px]">
       <div className="flex flex-col w-full justify-start md:w-[50%] md:gap-(--gap) mt-(--margin5) md:mt-0">
         <h4 className="text-text-muted text-xl">
           Hey there <span>!</span>

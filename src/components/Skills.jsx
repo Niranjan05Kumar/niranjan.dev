@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const Skills = () => {
   return (
-    <section className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) mb-(--margin6) ">
+    <section id="skills" className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) mb-(--margin6) ">
       <div>
         <h2 className="text-4xl font-semibold text-text">Skills</h2>
       </div>
