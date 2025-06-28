@@ -8,18 +8,15 @@ const sidebarVariants = {
   visible: {
     x: 0,
     transition: {
-      type: "spring",
-      stiffness: 500,
-      damping: 15,
       staggerChildren: 0.15,
     },
   },
-  exit: { x: "-50%" },
+  exit: { x: "-100%" },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, },
+  visible: { opacity: 1, },
 };
 
 const Sidebar = ({ isOpen, setIsOpen, active }) => {
@@ -38,9 +35,20 @@ const Sidebar = ({ isOpen, setIsOpen, active }) => {
   };
   return (
     <div className="relative">
-      <div
+      <motion.div
         onClick={() => setIsOpen((prev) => !prev)}
         className="sm:hidden block"
+        initial={{
+          y: -15,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.3,
+        }}
       >
         <MenuIcon
           size={32}
@@ -48,7 +56,7 @@ const Sidebar = ({ isOpen, setIsOpen, active }) => {
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
-      </div>
+      </motion.div>
 
       <AnimatePresence>
         {isOpen && (

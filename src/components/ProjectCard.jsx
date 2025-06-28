@@ -14,6 +14,10 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, easing: "easeInOut" }}
+      viewport={{ once: true, amount: 0.4 }}
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
       className="h-auto rounded-xl bg-bg-light border-2 border-border-light shadow-[0_5px_10px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col"
@@ -27,14 +31,20 @@ const ProjectCard = ({
           <p className="text-sm text-text-muted w-full">{description}</p>
           <div className="flex w-full flex-wrap gap-[6px]">
             {techs.map((tech, ind) => (
-              <h5 key={ind} className="bg-bg text-sm text-text-muted px-3 py-[2px] rounded-full border-1 border-(--border-light) flex justify-center">
+              <h5
+                key={ind}
+                className="bg-bg text-sm text-text-muted px-3 py-[2px] rounded-full border-1 border-(--border-light) flex justify-center"
+              >
                 {tech}
               </h5>
             ))}
           </div>
           <div className="flex flex-col w-full">
             {highlights.map((highlight, ind) => (
-              <h5 key={ind} className="text-md text-text py-[2px] flex items-center gap-(--gap2)">
+              <h5
+                key={ind}
+                className="text-md text-text py-[2px] flex items-center gap-(--gap2)"
+              >
                 <p className="bg-text w-2 h-2 rounded-full"></p>
                 {highlight}
               </h5>

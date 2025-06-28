@@ -1,19 +1,48 @@
 import React from "react";
 import { socialMedia } from "../data";
+import HeadingH2 from "./HeadingH2";
 import { motion } from "motion/react";
 import CopyIcon from "./CopyIcon";
 
+const parentVariants = {
+  hidden: { y: "50%", opacity:0 },
+  visible: {
+    y: 0,
+    opacity:1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Contact = () => {
   return (
-    <section id="contact" className="px-[5vw] lg:px-[15vw] flex flex-col gap-(--gap4) mt-(--margin7) mb-(--margin6) ">
+    <section
+      id="contact"
+      className="px-[5vw] lg:px-[15vw] flex flex-col gap-[60px] mt-(--margin7) mb-(--margin6) "
+    >
       <div>
-        <h2 className="text-4xl font-semibold text-text">Get In Touch</h2>
+        <HeadingH2 heading="Get In Touch" />
       </div>
-      <div className="flex flex-col gap-[24px]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={parentVariants}
+        className="flex flex-col gap-[24px]"
+      >
         {socialMedia.map((social) => {
           const Icon = social.icon;
           return (
             <motion.div
+              variants={itemVariants}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
               key={social.id}
               className="group flex items-center justify-between"
             >
@@ -42,7 +71,7 @@ const Contact = () => {
             </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };

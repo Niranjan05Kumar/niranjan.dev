@@ -1,178 +1,77 @@
 "use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
-import {
-  Children,
-  cloneElement,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+const parentVariants = {
+  hidden: { y: "50%" },
+  visible: {
+    y: 0,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
-function DockItem({
-  children,
-  className = "",
-  onClick,
-  mouseX,
-  spring,
-  distance,
-  magnification,
-  baseItemSize,
-}) {
-  const ref = useRef(null);
-  const isHovered = useMotionValue(0);
+const itemVariants = {
+  hidden: { opacity: 0, y:20 },
+  visible: { opacity: 1, y:0 },
+};
 
-  const mouseDistance = useTransform(mouseX, (val) => {
-    const rect = ref.current?.getBoundingClientRect() ?? {
-      x: 0,
-      width: baseItemSize,
-    };
-    return val - rect.x - baseItemSize / 2;
-  });
-
-  const targetSize = useTransform(
-    mouseDistance,
-    [-distance, 0, distance],
-    [baseItemSize, magnification, baseItemSize]
-  );
-
-  const size = useSpring(targetSize, spring);
-  const scale = useTransform(size, (s) => s / baseItemSize);
+export default function Dock({ items, className = "" }) {
+  const [hovered, setHovered] = useState(null);
 
   return (
     <motion.div
-      ref={ref}
-      style={{
-        width: baseItemSize,
-        height: baseItemSize,
-        position: "relative",
-        overflow: "visible",
-      }}
-      tabIndex={0}
-      onClick={onClick}
+    initial="hidden"
+    whileInView="visible"
+    variants={parentVariants}
+    viewport={{ once: true, amount: 0.8 }}
+      className={`${className} grid grid-rows-auto grid-cols-[auto_auto_auto] sm:grid-cols-6 sm:grid-rows-1 items-center justify-start w-fit gap-3 rounded-2xl`}
     >
-      <motion.div
-        onHoverStart={() => isHovered.set(1)}
-        onHoverEnd={() => isHovered.set(0)}
-        onFocus={() => isHovered.set(1)}
-        onBlur={() => isHovered.set(0)}
-        style={{ scale }}
-        className={`absolute inset-0 z-10 flex items-center justify-center rounded-2xl border-2 p-3 shadow-[0_4px_6px_rgba(0,0,0,0.25)] ${className}`}
-      >
-        {Children.map(children, (child) => cloneElement(child, { isHovered }))}
-      </motion.div>
-    </motion.div>
-  );
-}
-
-function DockLabel({ children, className = "", isHovered }) {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const unsubscribe = isHovered.on("change", (latest) => {
-      setIsVisible(latest === 1);
-    });
-    return () => unsubscribe();
-  }, [isHovered]);
-
-  return (
-    <AnimatePresence>
-      {isVisible && (
+      {items.map((item, idx) => (
         <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -10 }}
-          exit={{ opacity: 0, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit whitespace-nowrap rounded-md border-2 border-(--border-dark) bg-bg-dark px-2 py-0.5 text-xs text-text`}
-          role="tooltip"
-          style={{ x: "-50%" }}
-        >
-          {children}
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
-
-function DockIcon({ children, className = "" }) {
-  return (
-    <div
-      className={`flex items-center justify-center w-full h-full ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-export default function Dock({
-  items,
-  className = "",
-  spring = { mass: 0.1, stiffness: 150, damping: 12 },
-  magnification = 70,
-  distance = 200,
-  panelHeight = 64,
-  dockHeight = 256,
-  baseItemSize = 50,
-}) {
-  const mouseX = useMotionValue(Infinity);
-  const isHovered = useMotionValue(0);
-
-  const maxHeight = useMemo(
-    () => Math.max(dockHeight, magnification + magnification / 2 + 4),
-    [magnification, dockHeight]
-  );
-
-  const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
-  const height = useSpring(heightRow, spring);
-
-  return (
-    <motion.div
-      style={{ height }}
-      className="flex max-w-full flex-wrap items-center"
-    >
-      <motion.div
-        onMouseMove={({ pageX }) => {
-          isHovered.set(1);
-          mouseX.set(pageX);
-        }}
-        onMouseLeave={() => {
-          isHovered.set(0);
-          mouseX.set(Infinity);
-        }}
-        className={`${className} grid grid-cols-3 sm:grid-cols-6 items-center justify-start w-fit gap-3 rounded-2xl`}
-        style={{ height: panelHeight }}
-        role="toolbar"
-        aria-label="Application dock"
-      >
-        {items.map((item, index) => (
-          <DockItem
-            key={index}
-            onClick={item.onClick}
-            className={item.className}
-            mouseX={mouseX}
-            spring={spring}
-            distance={distance}
-            magnification={magnification}
-            baseItemSize={baseItemSize}
+        variants={itemVariants}
+        viewport={{ once: true, amount: 0.8 }}
+        className="flex flex-col w-fit items-start justify-center gap-[10px]">
+          <motion.div
+            onMouseEnter={() => setHovered(idx)}
+            onMouseLeave={() => setHovered(null)}
+            whileHover={{
+              scale: 1.07,
+              easing: "easeInOut",
+            }}
+            className={`relative z-10 h-[56px] w-[56px] flex items-center justify-center rounded-xl border-2 border-(--border-dark) p-[10px] bg-bg-light shadow-[0_4px_6px_rgba(0,0,0,0.25)] ${className}`}
           >
-            <DockIcon>
+            <div className={`flex items-center justify-center w-full h-full`}>
               <img
                 src={item.icon}
                 alt={item.label}
                 className="w-full h-full object-contain"
               />
-            </DockIcon>
-            <DockLabel>{item.label}</DockLabel>
-          </DockItem>
-        ))}
-      </motion.div>
+            </div>
+  
+            <AnimatePresence>
+              {hovered === item.id && (
+                <motion.div
+                  initial={{ opacity: 0, y: 0 }}
+                  animate={{ opacity: 1, y: -10 }}
+                  exit={{ opacity: 0, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className={`absolute hidden sm:block -top-6 left-1/2 w-fit whitespace-nowrap rounded-md border-2 border-(--border-dark) bg-bg-dark px-2 py-0.5 text-xs text-text`}
+                  style={{ x: "-50%" }}
+                >
+                  {item.label}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+            <motion.div
+              className={`sm:hidden block min-w-[56px] text-center whitespace-nowrap rounded-md border-2 border-(--border-dark) bg-bg-dark px-2 py-0.5 text-xs text-text`}
+            >
+              {item.label}
+            </motion.div>
+        </motion.div>
+      ))}
     </motion.div>
   );
 }

@@ -124,22 +124,19 @@ export const skills = [
     type: "Core Technologies",
     skillinfo: [
       {
+        id: 0,
         icon: html,
         label: "HTML5",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500 hover:bg-bg duration-500",
       },
       {
+        id: 1,
         icon: css,
         label: "CSS3",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
+        id: 2,
         icon: javascript,
         label: "JavaScript",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
     ],
   },
@@ -148,22 +145,19 @@ export const skills = [
     type: "Frontend Stack",
     skillinfo: [
       {
+        id: 0,
         icon: react,
-        label: "React JS",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+        label: "ReactJS",
       },
       {
-        icon: tailwind,
-        label: "Tailwind CSS",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
-      },
-      {
+        id: 1,
         icon: redux,
         label: "Redux",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        id: 2,
+        icon: tailwind,
+        label: "Tailwind CSS",
       },
     ],
   },
@@ -172,40 +166,34 @@ export const skills = [
     type: "Tools & Utilities",
     skillinfo: [
       {
+        id: 0,
         icon: git,
         label: "Git",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
+        id: 1,
         icon: github,
         label: "GitHub",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
+        id: 2,
         icon: cursor,
         label: "Cursor",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
+        id: 3,
         icon: vscode,
-        label: "VS Code",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+        label: "VSCode",
       },
       {
+        id: 4,
         icon: vercel,
         label: "Vercel",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
+        id: 5,
         icon: figma,
         label: "Figma",
-        className:
-          "bg-bg-light p-[17px] border-(--border-light) hover:bg-bg duration-500",
       },
     ],
   },
@@ -214,16 +202,14 @@ export const skills = [
     type: "Animations & Interactions",
     skillinfo: [
       {
-        icon: framer,
-        label: "Framer-motion",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
-      },
-      {
+        id: 0,
         icon: gsap,
         label: "GSAP",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
+      },
+      {
+        id: 1,
+        icon: framer,
+        label: "Framer-motion",
       },
     ],
   },
@@ -232,16 +218,14 @@ export const skills = [
     type: "UI Component Libraries",
     skillinfo: [
       {
+        id: 0,
         icon: shadcn,
         label: "ShadCN",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
       {
+        id: 1,
         icon: reactbits,
         label: "ReactBits",
-        className:
-          "bg-bg-light border-(--border-light) hover:bg-bg duration-500",
       },
     ],
   },
@@ -254,11 +238,11 @@ export const projects = [
     title: "Obys Agency Clone",
     description:
       "Animated Obys clone with GSAP, Locomotive Scroll, and magnetic interactions showcasing creative scroll effects.",
-    techs: [
-      "HTML", "CSS", "Javascript", "GSAP", "Locomotive JS" 
-    ],
+    techs: ["HTML", "CSS", "Javascript", "GSAP", "Locomotive JS"],
     highlights: [
-      "Scroll based animations", "magnetic buttons", "responsive layout", 
+      "Scroll based animations",
+      "magnetic buttons",
+      "responsive layout",
     ],
     live: "https://niranjan05kumar.github.io/obys.agency/",
     github: "https://github.com/Niranjan05Kumar/obys.agency",
@@ -269,37 +253,33 @@ export const projects = [
     title: "HooBank UI",
     description:
       "React-based HooBank UI with Tailwind CSS, featuring reusable components and structured data-driven design.",
-    techs: [
-      "React", "Tailwind CSS", "Javascript",
-    ],
+    techs: ["React", "Tailwind CSS", "Javascript"],
     highlights: [
-      "Reusable components", "Structured data-driven", "responsive layout", 
+      "Reusable components",
+      "Structured data-driven",
+      "responsive layout",
     ],
-      live: "https://hoobank-iota-brown.vercel.app/",
+    live: "https://hoobank-iota-brown.vercel.app/",
     github: "https://github.com/Niranjan05Kumar/hoobank",
   },
   {
-    id:2,
+    id: 2,
     image: medwin,
     title: "Medwin Health",
     description:
       "Responsive health landing page featuring embedded Google Map, clean layout, and mobile-friendly user interface.",
-    techs: [
-      "HTML", "Tailwind CSS", "Javascript",
-    ],
-    highlights: [
-      "Google Map integration", "responsive layout", 
-    ],
-      live: "https://medwin-psi.vercel.app/",
+    techs: ["HTML", "Tailwind CSS", "Javascript"],
+    highlights: ["Google Map integration", "responsive layout"],
+    live: "https://medwin-psi.vercel.app/",
     github: "https://github.com/Niranjan05Kumar/Medwin",
   },
 ];
 
-import GithubIcon from '../assets/github.svg?react';
-import LinkedinIcon from '../assets/linkedin.svg?react';
-import TwitterIcon from '../assets/twitter.svg?react';
-import MailIcon from '../assets/mail.svg?react';
-import LocationIcon from '../assets/location.svg?react';
+import GithubIcon from "../assets/github.svg?react";
+import LinkedinIcon from "../assets/linkedin.svg?react";
+import TwitterIcon from "../assets/twitter.svg?react";
+import MailIcon from "../assets/mail.svg?react";
+import LocationIcon from "../assets/location.svg?react";
 
 export const socialMedia = [
   {
@@ -314,7 +294,8 @@ export const socialMedia = [
     icon: LinkedinIcon,
     label: "Linkedin",
     link: "https://www.linkedin.com/in/niranjan05kumar/",
-    onClick: () => window.open("https://www.linkedin.com/in/niranjan05kumar/", "_blank"),
+    onClick: () =>
+      window.open("https://www.linkedin.com/in/niranjan05kumar/", "_blank"),
   },
   {
     id: "social-media-3",
@@ -335,6 +316,10 @@ export const socialMedia = [
     icon: LocationIcon,
     label: "Varanasi, India",
     link: "Varanasi (221005), India",
-    onClick: () => window.open("https://www.google.com/maps/place/Indian+Institute+of+Technology+(BHU)+Varanasi/@25.2677,82.9913,17z", "_blank"),
+    onClick: () =>
+      window.open(
+        "https://www.google.com/maps/place/Indian+Institute+of+Technology+(BHU)+Varanasi/@25.2677,82.9913,17z",
+        "_blank"
+      ),
   },
 ];

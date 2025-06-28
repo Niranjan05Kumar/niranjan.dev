@@ -15,8 +15,9 @@ const Footer = () => {
     <div className="relative text-center flex flex-col sm:flex-row h-fit gap-4 items-center justify-center mx-[5vw] lg:mx-[15vw] py-6 border-t-2 border-(--border-dark)">
       <motion.p
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
         className="text-text-muted text-base"
       >
         Thanks for your visit. The best is yet to come!
@@ -25,6 +26,10 @@ const Footer = () => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        viewport={{ once: true, amount: 0.4 }}
         onClick={handleSurprise}
         className="bg-primary text-white px-4 py-2 rounded-lg shadow hover:bg-opacity-90 transition"
       >

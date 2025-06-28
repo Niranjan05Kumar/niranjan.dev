@@ -5,6 +5,26 @@ import Switch from "./Switch";
 import { motion, useScroll } from "motion/react";
 import { useLenis } from "../LenisContext";
 
+const navbarVariants = {
+  hidden: { },
+  visible: {
+    y: 0,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -8 },
+  visible: { opacity: 1, y: 0, 
+    transition: {
+      type: "spring",
+      bounce: 0.6
+    }
+   },
+};
+
 const Navbar = ({ active }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -24,9 +44,9 @@ const Navbar = ({ active }) => {
 
   return (
     <nav className="fixed left-0 top-0 px-[5vw] lg:px-[15vw] py-(--padding4) select-none flex flex-row justify-between items-center bg-trans-blur">
-      <ul className="sm:flex flex-1 sm:gap-(--gap3) md:gap-(--gap4) text-lg hidden ">
+      <motion.ul initial="hidden" animate="visible" variants={navbarVariants} className="sm:flex flex-1 sm:gap-(--gap3) md:gap-(--gap4) text-lg hidden ">
         {navLinks.map((link) => (
-          <li key={link.id}>
+          <motion.li variants={itemVariants} key={link.id}>
             <a
               href={`#${link.href}`}
               onClick={() => scrollToSection(link.href)}
@@ -38,15 +58,27 @@ const Navbar = ({ active }) => {
             >
               {link.label}
             </a>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
 
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} active={active} />
 
-      <div>
+      <motion.div
+      initial={{
+        y:-15,
+        opacity:0,
+      }}
+      animate={{
+        y: 0,
+        opacity:1,
+      }}
+      transition={{
+        duration: 0.3,
+        type: "spring",
+      }} >
         <Switch />
-      </div>
+      </motion.div>
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="absolute bottom-0 left-0 origin-left w-full h-[2px] bg-text-muted sm:hidden"
