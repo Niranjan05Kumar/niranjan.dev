@@ -3,16 +3,26 @@ import { topSkills } from "../data";
 import { motion } from "motion/react";
 import ShinyText from "../blocks/TextAnimations/ShinyText";
 import { resume } from "../assets";
+import Exclamation from "./Exclamation";
+import { useState } from "react";
+import Toast from "./Toast";
+import { FaCircleCheck } from "react-icons/fa6";
 
 const Hero = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleDownload = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
   return (
     <section
       id="about"
       className="section mt-[90px] flex flex-col items-center justify-between gap-y-(--gap4) md:flex-row px-[5vw] lg:px-[15vw] py-(--spacing5) md:py-[120px]"
     >
       <div className="flex flex-col w-full justify-start md:w-[50%] md:gap-(--gap) mt-(--margin5) md:mt-0">
-        <h4 className="text-text-muted text-xl">
-          Hey there <span>!</span>
+        <h4 className="text-text-muted text-xl flex gap-1">
+          Hey there <Exclamation text={"!"} />
         </h4>
         <h1 className="uppercase font-semibold text-[8vw] lg:text-[3vw] md:text-[5vw] tracking-[3px] text-text">
           Niranjan Kumar
@@ -30,15 +40,27 @@ const Hero = () => {
           high-performance web applications.
         </p>
         <div className="action flex flex-row gap-(--gap2) justify-start mt-(--margin5)">
-          <a href={resume} download>
+          <a href={resume} onClick={handleDownload} download>
             <button className="flex items-center bg-text text-bg-dark hover:bg-text-muted duration-300 ease-in py-(--padding2) px-(--padding3) gap-(--gap) rounded-(--b-radius1) cursor-pointer">
               <MdOutlineFileDownload />
               Resume
             </button>
           </a>
-          <a href="#contact" className="outline-2 outline-border-dark py-(--padding2) px-(--padding4) rounded-(--b-radius1) text-text bg-bg-dark hover:bg-bg duration-300 ease-in cursor-pointer">
+          <a
+            href="#contact"
+            className="outline-2 outline-border-dark py-(--padding2) px-(--padding4) rounded-(--b-radius1) text-text bg-bg-dark hover:bg-bg duration-300 ease-in cursor-pointer"
+          >
             Contact
           </a>
+          <Toast
+            show={showToast}
+            message={
+              <span className="flex items-center gap-3 text-lg">
+                <FaCircleCheck className="text-green-500 text-lg" />
+                Resume downloaded !
+              </span>
+            }
+          />
         </div>
       </div>
 
