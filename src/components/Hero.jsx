@@ -7,8 +7,21 @@ import Exclamation from "./Exclamation";
 import { useState } from "react";
 import Toast from "./Toast";
 import { FaCircleCheck } from "react-icons/fa6";
+import { useLenis } from "../LenisContext";
 
 const Hero = () => {
+  const lenis = useLenis();
+  const scrollToSection = (id) => {
+    if (lenis) {
+      lenis.scrollTo(`#${id}`, {
+        offset: -100,
+        duration: 1.2,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+      });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const [showToast, setShowToast] = useState(false);
 
   const handleDownload = () => {
@@ -62,6 +75,7 @@ const Hero = () => {
           </a>
           <a
             href="#contact"
+            onClick={() => scrollToSection("contact")}
             className="outline-2 outline-border-dark py-(--padding2) px-(--padding4) rounded-(--b-radius1) text-text bg-bg-dark hover:bg-bg duration-300 ease-in cursor-pointer"
           >
             Contact
