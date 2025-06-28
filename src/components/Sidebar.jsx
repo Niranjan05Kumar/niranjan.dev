@@ -1,6 +1,7 @@
 import { navLinks } from "../data";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuIcon from "./MenuIcon";
+import { useLenis } from "../LenisContext";
 
 const sidebarVariants = {
   hidden: { x: "-50%" },
@@ -21,7 +22,20 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-const Sidebar = ({ isOpen, setIsOpen, active  }) => {
+const Sidebar = ({ isOpen, setIsOpen, active }) => {
+  const lenis = useLenis();
+
+  const scrollToSection = (id) => {
+    if (lenis) {
+      lenis.scrollTo(`#${id}`, {
+        offset: -100,
+        duration: 1.2,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+      });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="relative">
       <div
@@ -50,9 +64,12 @@ const Sidebar = ({ isOpen, setIsOpen, active  }) => {
                 <motion.li
                   key={link.id}
                   variants={itemVariants}
+                  onClick={() => scrollToSection(link.href)}
                   className={`hover:text-text duration-300 ease-in ${
-                active === link.id ? "text-text font-semibold" : "text-text-muted"
-              }`}
+                    active === link.id
+                      ? "text-text font-semibold"
+                      : "text-text-muted"
+                  }`}
                 >
                   <a href={`#${link.href}`}>{link.label}</a>
                 </motion.li>
