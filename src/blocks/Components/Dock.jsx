@@ -30,6 +30,7 @@ export default function Dock({ items, className = "" }) {
     >
       {items.map((item, idx) => (
         <motion.div
+        key={idx}
         variants={itemVariants}
         viewport={{ once: true, amount: 0.8 }}
         className="flex flex-col w-fit items-start justify-center gap-[10px]">

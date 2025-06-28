@@ -323,3 +323,38 @@ export const socialMedia = [
       ),
   },
 ];
+
+export const aboutPortfolio = [
+  {
+    title: "🛠 Tech Stack",
+    items: [
+      "React for component-based structure",
+      "Tailwind CSS for utility-first, responsive design",
+      "Framer Motion for smooth UI animations",
+      "Lenis.js for fluid scrolling experience",
+    ],
+  },
+  {
+    title: "🎨 UI & Design",
+    items: [
+      "Minimal, theme-aware layout (dark/light toggle)",
+      "Spotlight cards in Education for visual depth",
+      "Consistent spacing and animations using custom CSS variables",
+    ],
+  },
+  {
+    title: "🔔 Interactive Elements",
+    items: [
+      "Resume download button with toast notification",
+      "Footer-based confetti and 'About' toggle interaction",
+      "Bookmark-style sidebar navigation",
+      "Smooth section-based scrolling",
+    ],
+  },
+  {
+    title: "💡 Purpose",
+    items: [
+      "This portfolio is not just a showcase — it's a reflection of my approach to clean code, design thinking, and frontend creativity.",
+    ],
+  },
+];
