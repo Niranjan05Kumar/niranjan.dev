@@ -23,7 +23,6 @@ import hoobank from "./hoobank.png";
 import medwin from "./medwin.png";
 import obysagency from "./obysagency.png";
 import location from "./location.svg";
-import resume from './Niranjan_Kumar_Resume.pdf'
 
 
 export {
@@ -52,5 +51,4 @@ export {
   medwin,
   obysagency,
   location,
-  resume,
 };

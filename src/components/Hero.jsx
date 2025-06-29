@@ -2,7 +2,6 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { topSkills } from "../data";
 import { motion } from "motion/react";
 import ShinyText from "../blocks/TextAnimations/ShinyText";
-import { resume } from "../assets";
 import Exclamation from "./Exclamation";
 import { useState } from "react";
 import Toast from "./Toast";
@@ -67,7 +66,7 @@ const Hero = () => {
         <div
           className="action flex flex-row gap-(--gap2) justify-start mt-(--margin5)"
         >
-          <a href={resume} onClick={handleDownload} download>
+          <a href="/Niranjan_Kumar_Resume.pdf" onClick={handleDownload} download>
             <button className="flex items-center bg-text text-bg-dark hover:bg-text-muted duration-300 ease-in py-(--padding2) px-(--padding3) gap-(--gap) rounded-(--b-radius1) cursor-pointer">
               <MdOutlineFileDownload />
               Resume
