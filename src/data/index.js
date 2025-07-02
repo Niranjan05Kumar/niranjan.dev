@@ -244,8 +244,8 @@ export const projects = [
       "magnetic buttons",
       "responsive layout",
     ],
-    live: "https://niranjan05kumar.github.io/obys.agency/",
-    github: "https://github.com/Niranjan05Kumar/obys.agency",
+    live: "https://niranjan05kumar.github.io/obysagency/",
+    github: "https://github.com/Niranjan05Kumar/obysagency",
   },
   {
     id: 1,
